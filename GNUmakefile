@@ -78,4 +78,7 @@ examples-test:
 		cd ../..; \
 	done\
 
+doc:
+	@sh -c "'$(CURDIR)/scripts/generate-doc.sh'"
+
 .PHONY: build test testacc fmt fmtcheck lint tools test-compile website website-lint website-test examples-test website-local
