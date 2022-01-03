@@ -1,3 +1,6 @@
+TEST
+
+
 3DS OUTSCALE Terraform Provider
 ===============================
 
