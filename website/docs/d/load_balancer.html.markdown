@@ -9,7 +9,7 @@ description: |-
 # outscale_load_balancer Data Source
 
 Provides information about a specific load balancer.
-For more information on this resource, see the [User Guide](https://wiki.outscale.net/display/EN/About+Load+Balancers).
+For more information on this resource, see the [User Guide](https://docs.outscale.com/en/userguide/About-Load-Balancers.html).
 For more information on this resource actions, see the [API documentation](https://docs.outscale.com/api#3ds-outscale-api-loadbalancer).
 
 ## Example Usage
@@ -35,7 +35,7 @@ The following arguments are supported:
 The following attributes are exported:
 
 * `access_log` - Information about access logs.
-    * `is_enabled` - If true, access logs are enabled for your load balancer. If false, they are not. If you set this to true in your request, the `osu_bucket_name` parameter is required.
+    * `is_enabled` - If true, access logs are enabled for your load balancer. If false, they are not. If you set this to true in your request, the `OsuBucketName` parameter is required.
     * `osu_bucket_name` - The name of the OOS bucket for the access logs.
     * `osu_bucket_prefix` - The path to the folder of the access logs in your OOS bucket (by default, the `root` level of your bucket).
     * `publication_interval` - The time interval for the publication of access logs in the OOS bucket, in minutes. This value can be either 5 or 60 (by default, 60).
@@ -63,7 +63,7 @@ The following attributes are exported:
 * `load_balancer_sticky_cookie_policies` - The policies defined for the load balancer.
     * `policy_name` - The name of the stickiness policy.
 * `load_balancer_type` - The type of load balancer. Valid only for load balancers in a Net.<br />
-If `LoadBalancerType` is `internet-facing`, the load balancer has a public DNS name that resolves to a public IP address.<br />
+If `LoadBalancerType` is `internet-facing`, the load balancer has a public DNS name that resolves to a public IP.<br />
 If `LoadBalancerType` is `internal`, the load balancer has a public DNS name that resolves to a private IP address.
 * `net_id` - The ID of the Net for the load balancer.
 * `security_groups` - One or more IDs of security groups for the load balancers. Valid only for load balancers in a Net.
