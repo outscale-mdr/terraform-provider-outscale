@@ -9,7 +9,7 @@ description: |-
 # outscale_vm Resource
 
 Manages a virtual machine (VM).
-For more information on this resource, see the [User Guide](https://wiki.outscale.net/display/EN/About+Instances).
+For more information on this resource, see the [User Guide](https://docs.outscale.com/en/userguide/About-Instances.html).
 For more information on this resource actions, see the [API documentation](https://docs.outscale.com/api#3ds-outscale-api-vm).
 
 ## Example Usage
@@ -51,7 +51,7 @@ resource "outscale_vm" "vm02" {
 	vm_type                 = var.vm_type
 	keypair_name            = var.keypair_name
 	block_device_mappings {
-		device_name = "/dev/sda" # /dev/sda corresponds to the root device of the VM
+		device_name = "/dev/sda1" # /dev/sda1 corresponds to the root device of the VM
 		bsu {
 			volume_size = 15
 			volume_type = "gp2"
@@ -199,7 +199,7 @@ For more information about volume types, see [Volume Types and IOPS](https://wik
     * `private_ips` - (Optional) One or more private IP addresses to assign to the NIC, if you create a NIC when creating a VM. Only one private IP address can be the primary private IP address.
         * `is_primary` - (Optional) If true, the IP address is the primary private IP address of the NIC.
         * `private_ip` - (Optional) The private IP address of the NIC.
-    * `secondary_private_ip_count` - (Optional) The number of secondary private IP addresses, if you create a NIC when creating a VM. This parameter cannot be specified if you specified more than one private IP address in the `private_ips` parameter.
+    * `secondary_private_ip_count` - (Optional) The number of secondary private IP addresses, if you create a NIC when creating a VM. This parameter cannot be specified if you specified more than one private IP address in the `PrivateIps` parameter.
     * `security_group_ids` - (Optional) One or more IDs of security groups for the NIC, if you acreate a NIC when creating a VM.
     * `subnet_id` - (Optional) The ID of the Subnet for the NIC, if you create a NIC when creating a VM.
 * `performance` - (Optional) The performance of the VM (`medium` | `high` | `highest`). Updating this parameter will trigger a stop/start of the VM.
@@ -248,20 +248,20 @@ The following attributes are exported:
         * `device_number` - The device index for the NIC attachment (between 1 and 7, both included).
         * `link_nic_id` - The ID of the NIC to attach.
         * `state` - The state of the attachment (`attaching` \| `attached` \| `detaching` \| `detached`).
-    * `link_public_ip` - Information about the EIP associated with the NIC.
+    * `link_public_ip` - Information about the public IP associated with the NIC.
         * `public_dns_name` - The name of the public DNS.
-        * `public_ip` - The External IP address (EIP) associated with the NIC.
-        * `public_ip_account_id` - The account ID of the owner of the EIP.
+        * `public_ip` - The public IP associated with the NIC.
+        * `public_ip_account_id` - The account ID of the owner of the public IP.
     * `mac_address` - The Media Access Control (MAC) address of the NIC.
     * `net_id` - The ID of the Net for the NIC.
     * `nic_id` - The ID of the NIC.
     * `private_dns_name` - The name of the private DNS.
     * `private_ips` - The private IP address or addresses of the NIC.
         * `is_primary` - If true, the IP address is the primary private IP address of the NIC.
-        * `link_public_ip` - Information about the EIP associated with the NIC.
+        * `link_public_ip` - Information about the public IP associated with the NIC.
             * `public_dns_name` - The name of the public DNS.
-            * `public_ip` - The External IP address (EIP) associated with the NIC.
-            * `public_ip_account_id` - The account ID of the owner of the EIP.
+            * `public_ip` - The public IP associated with the NIC.
+            * `public_ip_account_id` - The account ID of the owner of the public IP.
         * `private_dns_name` - The name of the private DNS.
         * `private_ip` - The private IP address.
     * `security_groups` - One or more IDs of security groups for the NIC.
@@ -277,7 +277,7 @@ The following attributes are exported:
 * `private_ip` - The primary private IP address of the VM.
 * `product_codes` - The product code associated with the OMI used to create the VM (`0001` Linux/Unix \| `0002` Windows \| `0004` Linux/Oracle \| `0005` Windows 10).
 * `public_dns_name` - The name of the public DNS.
-* `public_ip` - The public IP address of the VM.
+* `public_ip` - The public IP of the VM.
 * `reservation_id` - The reservation ID of the VM.
 * `root_device_name` - The name of the root device for the VM (for example, /dev/vda1).
 * `root_device_type` - The type of root device used by the VM (always `bsu`).

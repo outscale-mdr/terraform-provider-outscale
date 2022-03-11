@@ -9,7 +9,7 @@ description: |-
 # outscale_vm_state Data Source
 
 Provides information about a specific VM state.
-For more information on this resource, see the [User Guide](https://wiki.outscale.net/display/EN/About+Instance+Lifecycle).
+For more information on this resource, see the [User Guide](https://docs.outscale.com/en/userguide/About-Instance-Lifecycle.html).
 For more information on this resource actions, see the [API documentation](https://docs.outscale.com/api#readvmsstate).
 
 ## Example Usage
@@ -29,7 +29,7 @@ The following arguments are supported:
 
 * `all_vms` - (Optional) If true, includes the status of all VMs. By default or if set to false, only includes the status of running VMs.
 * `filter` - (Optional) A combination of a filter name and one or more filter values. You can specify this argument for as many filter names as you need. The filter name can be any of the following:
-    * `maintenance_event_codes` - (Optional) The code for the scheduled event (`system-reboot` | `system-maintenance`).
+    * `maintenance_event_codes` - (Optional) The code for the scheduled event (`system-reboot` \| `system-maintenance`).
     * `maintenance_event_descriptions` - (Optional) The description of the scheduled event.
     * `maintenance_events_not_after` - (Optional) The latest time the event can end.
     * `maintenance_events_not_before` - (Optional) The earliest time the event can start.

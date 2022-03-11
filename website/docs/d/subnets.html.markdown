@@ -9,7 +9,7 @@ description: |-
 # outscale_subnets Data Source
 
 Provides information about Subnets.
-For more information on this resource, see the [User Guide](https://wiki.outscale.net/display/EN/About+VPCs).
+For more information on this resource, see the [User Guide](https://docs.outscale.com/en/userguide/About-VPCs.html).
 For more information on this resource actions, see the [API documentation](https://docs.outscale.com/api#3ds-outscale-api-subnet).
 
 ## Example Usage
@@ -45,7 +45,7 @@ The following attributes are exported:
 * `subnets` - Information about one or more Subnets.
     * `available_ips_count` - The number of available IP addresses in the Subnets.
     * `ip_range` - The IP range in the Subnet, in CIDR notation (for example, 10.0.0.0/16).
-    * `map_public_ip_on_launch` - If true, a public IP address is assigned to the network interface cards (NICs) created in the specified Subnet.
+    * `map_public_ip_on_launch` - If true, a public IP is assigned to the network interface cards (NICs) created in the specified Subnet.
     * `net_id` - The ID of the Net in which the Subnet is.
     * `state` - The state of the Subnet (`pending` \| `available`).
     * `subnet_id` - The ID of the Subnet.

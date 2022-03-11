@@ -9,7 +9,7 @@ description: |-
 # outscale_volume Resource
 
 Manages a volume.
-For more information on this resource, see the [User Guide](https://wiki.outscale.net/display/EN/About+Volumes).
+For more information on this resource, see the [User Guide](https://docs.outscale.com/en/userguide/About-Volumes.html).
 For more information on this resource actions, see the [API documentation](https://docs.outscale.com/api#3ds-outscale-api-volume).
 
 ## Example Usage
@@ -28,7 +28,7 @@ resource "outscale_volume" "volume01" {
 The following arguments are supported:
 
 * `iops` - (Optional) The number of I/O operations per second (IOPS). This parameter must be specified only if you create an `io1` volume. The maximum number of IOPS allowed for `io1` volumes is `13000`.
-* `size` - (Optional) The size of the volume, in gibibytes (GiB). The maximum allowed size for a volume is 14901 GiB. This parameter is required if the volume is not created from a snapshot (`snapshot_id` unspecified). 
+* `size` - (Optional) The size of the volume, in gibibytes (GiB). The maximum allowed size for a volume is 14901 GiB. This parameter is required if the volume is not created from a snapshot (`SnapshotId` unspecified). 
 * `snapshot_id` - (Optional) The ID of the snapshot from which you want to create the volume.
 * `subregion_name` - (Required) The Subregion in which you want to create the volume.
 * `tags` - (Optional) A tag to add to this resource. You can specify this argument several times.
