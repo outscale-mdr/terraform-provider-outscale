@@ -9,7 +9,7 @@ description: |-
 # outscale_load_balancer_attributes Resource
 
 Manages load balancer attributes.
-For more information on this resource, see the [User Guide](https://wiki.outscale.net/display/EN/About+Load+Balancers).
+For more information on this resource, see the [User Guide](https://docs.outscale.com/en/userguide/About-Load-Balancers.html).
 For more information on this resource actions, see the [API documentation](https://docs.outscale.com/api#updateloadbalancer).
 
 ## Example Usage
@@ -106,7 +106,7 @@ resource "outscale_load_balancer_attributes" "attributes04" {
 The following arguments are supported:
 
 * `access_log` - Information about access logs.
-    * `is_enabled` - (Optional) If true, access logs are enabled for your load balancer. If false, they are not. If you set this to true in your request, the `osu_bucket_name` parameter is required.
+    * `is_enabled` - (Optional) If true, access logs are enabled for your load balancer. If false, they are not. If you set this to true in your request, the `OsuBucketName` parameter is required.
     * `osu_bucket_name` - (Optional) The name of the OOS bucket for the access logs.
     * `osu_bucket_prefix` - (Optional) The path to the folder of the access logs in your OOS bucket (by default, the `root` level of your bucket).
     * `publication_interval` - (Optional) The time interval for the publication of access logs in the OOS bucket, in minutes. This value can be either 5 or 60 (by default, 60).
@@ -121,14 +121,14 @@ The following arguments are supported:
 * `load_balancer_name` - (Required) The name of the load balancer.
 * `load_balancer_port` - (Optional) The port on which the load balancer is listening (between `1` and `65535`, both included). This parameter is required if you want to update the server certificate.
 * `policy_names` - (Optional) The name of the policy you want to enable for the listener.
-* `server_certificate_id` - (Optional) The Outscale Resource Name (ORN) of the server certificate. For more information, see [Resource Identifiers > Outscale Resource Names (ORNs)](https://wiki.outscale.net/display/EN/Resource+Identifiers#ResourceIdentifiers-ORNFormat). If this parameter is specified, you must also specify the `load_balancer_port` parameter.
+* `server_certificate_id` - (Optional) The Outscale Resource Name (ORN) of the server certificate. For more information, see [Resource Identifiers > Outscale Resource Names (ORNs)](https://wiki.outscale.net/display/EN/Resource+Identifiers#ResourceIdentifiers-ORNFormat). If this parameter is specified, you must also specify the `LoadBalancerPort` parameter.
 
 ## Attribute Reference
 
 The following attributes are exported:
 
 * `access_log` - Information about access logs.
-    * `is_enabled` - If true, access logs are enabled for your load balancer. If false, they are not. If you set this to true in your request, the `osu_bucket_name` parameter is required.
+    * `is_enabled` - If true, access logs are enabled for your load balancer. If false, they are not. If you set this to true in your request, the `OsuBucketName` parameter is required.
     * `osu_bucket_name` - The name of the OOS bucket for the access logs.
     * `osu_bucket_prefix` - The path to the folder of the access logs in your OOS bucket (by default, the `root` level of your bucket).
     * `publication_interval` - The time interval for the publication of access logs in the OOS bucket, in minutes. This value can be either 5 or 60 (by default, 60).
@@ -156,8 +156,8 @@ The following attributes are exported:
 * `load_balancer_sticky_cookie_policies` - The policies defined for the load balancer.
     * `policy_name` - The name of the stickiness policy.
 * `load_balancer_type` - The type of load balancer. Valid only for load balancers in a Net.<br />
-If `load_balancer_type` is `internet-facing`, the load balancer has a public DNS name that resolves to a public IP address.<br />
-If `load_balancer_type` is `internal`, the load balancer has a public DNS name that resolves to a private IP address.
+If `LoadBalancerType` is `internet-facing`, the load balancer has a public DNS name that resolves to a public IP.<br />
+If `LoadBalancerType` is `internal`, the load balancer has a public DNS name that resolves to a private IP address.
 * `net_id` - The ID of the Net for the load balancer.
 * `security_groups` - One or more IDs of security groups for the load balancers. Valid only for load balancers in a Net.
 * `source_security_group` - Information about the source security group of the load balancer, which you can use as part of your inbound rules for your registered VMs.<br />

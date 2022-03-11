@@ -9,7 +9,7 @@ description: |-
 # outscale_nic Resource
 
 Manages a network interface card (NIC).
-For more information on this resource, see the [User Guide](https://wiki.outscale.net/display/EN/About+FNIs).
+For more information on this resource, see the [User Guide](https://docs.outscale.com/en/userguide/About-FNIs.html).
 For more information on this resource actions, see the [API documentation](https://docs.outscale.com/api#3ds-outscale-api-nic).
 
 ## Example Usage
@@ -67,7 +67,7 @@ The following arguments are supported:
 
 * `description` - (Optional) A description for the NIC.
 * `private_ips` - (Optional) The primary private IP address for the NIC.<br />
-This IP address must be within the IP address range of the Subnet that you specify with the `subnet_id` attribute.<br />
+This IP address must be within the IP address range of the Subnet that you specify with the `SubnetId` attribute.<br />
 If you do not specify this attribute, a random private IP address is selected within the IP address range of the Subnet.
     * `is_primary` - (Optional) If true, the IP address is the primary private IP address of the NIC.
     * `private_ip` - (Optional) The private IP address of the NIC.
@@ -91,24 +91,24 @@ The following attributes are exported:
     * `state` - The state of the attachment (`attaching` \| `attached` \| `detaching` \| `detached`).
     * `vm_account_id` - The account ID of the owner of the VM.
     * `vm_id` - The ID of the VM.
-* `link_public_ip` - Information about the EIP association.
-    * `link_public_ip_id` - (Required in a Net) The ID representing the association of the EIP with the VM or the NIC.
+* `link_public_ip` - Information about the public IP association.
+    * `link_public_ip_id` - (Required in a Net) The ID representing the association of the public IP with the VM or the NIC.
     * `public_dns_name` - The name of the public DNS.
-    * `public_ip` - The External IP address (EIP) associated with the NIC.
-    * `public_ip_account_id` - The account ID of the owner of the EIP.
-    * `public_ip_id` - The allocation ID of the EIP.
+    * `public_ip` - The public IP associated with the NIC.
+    * `public_ip_account_id` - The account ID of the owner of the public IP.
+    * `public_ip_id` - The allocation ID of the public IP.
 * `mac_address` - The Media Access Control (MAC) address of the NIC.
 * `net_id` - The ID of the Net for the NIC.
 * `nic_id` - The ID of the NIC.
 * `private_dns_name` - The name of the private DNS.
 * `private_ips` - The private IP addresses of the NIC.
     * `is_primary` - If true, the IP address is the primary private IP address of the NIC.
-    * `link_public_ip` - Information about the EIP association.
-        * `link_public_ip_id` - (Required in a Net) The ID representing the association of the EIP with the VM or the NIC.
+    * `link_public_ip` - Information about the public IP association.
+        * `link_public_ip_id` - (Required in a Net) The ID representing the association of the public IP with the VM or the NIC.
         * `public_dns_name` - The name of the public DNS.
-        * `public_ip` - The External IP address (EIP) associated with the NIC.
-        * `public_ip_account_id` - The account ID of the owner of the EIP.
-        * `public_ip_id` - The allocation ID of the EIP.
+        * `public_ip` - The public IP associated with the NIC.
+        * `public_ip_account_id` - The account ID of the owner of the public IP.
+        * `public_ip_id` - The allocation ID of the public IP.
     * `private_dns_name` - The name of the private DNS.
     * `private_ip` - The private IP address of the NIC.
 * `security_groups` - One or more IDs of security groups for the NIC.
